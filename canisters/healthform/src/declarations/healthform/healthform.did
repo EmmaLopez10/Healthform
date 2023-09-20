@@ -1,0 +1,19 @@
+type Patient = 
+ record {
+   creator: text;
+   nombre: text;
+   age: text;
+   pressure: text;
+   temperature: text;
+ };
+service : {
+  registerPatient: (text, text, text, text) -> ();
+  deletePatient: (text) -> (bool);
+  getPatient: (text) -> (opt Patient) query;
+  getPatient: () -> (vec record {
+                         text;
+                         Patient;
+                       }) query;
+  updatePatient: (text, text, text, text, text) -> (bool);
+  getNumberofPatients: () -> (Int);
+}
